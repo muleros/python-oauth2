@@ -713,7 +713,7 @@ class SignatureMethod_PLAINTEXT(SignatureMethod):
 
 class Client2(object):
     """Client for OAuth 2.0 draft spec
-    https://svn.tools.ietf.org/html/draft-hammer-oauth2-00
+    http://tools.ietf.org/html/draft-ietf-oauth-v2-22
     """
 
     def __init__(self, client_id, client_secret, oauth_base_url,
@@ -742,7 +742,7 @@ class Client2(object):
     def authorization_url(self, redirect_uri=None, params=None, state=None,
         immediate=None, endpoint='authorize'):
         """Get the URL to redirect the user for client authorization
-        https://svn.tools.ietf.org/html/draft-hammer-oauth2-00#section-3.5.2.1
+        http://tools.ietf.org/html/draft-ietf-oauth-v2-22#section-4.1.1
         """
 
         # prepare required args
@@ -769,7 +769,7 @@ class Client2(object):
     def access_token(self, code, redirect_uri, params=None, secret_type=None,
         endpoint='access_token'):
         """Get an access token from the supplied code
-        https://svn.tools.ietf.org/html/draft-hammer-oauth2-00#section-3.5.2.2
+        http://tools.ietf.org/html/draft-ietf-oauth-v2-22#section-4.1.3
         """
 
         # prepare required args
