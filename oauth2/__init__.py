@@ -749,6 +749,7 @@ class Client2(object):
         args = {
             'type': 'web_server',
             'client_id': self.client_id,
+            'response_type': 'code',
         }
 
         # prepare optional args
@@ -782,6 +783,7 @@ class Client2(object):
             'client_secret': self.client_secret,
             'code': code,
             'redirect_uri': redirect_uri,
+            'grant_type': 'authorization_code',
         }
 
         # prepare optional args
