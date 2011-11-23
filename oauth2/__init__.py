@@ -29,6 +29,7 @@ import urlparse
 import hmac
 import binascii
 import httplib2
+import json
 
 try:
     from urlparse import parse_qs, parse_qsl
@@ -802,15 +803,12 @@ class Client2(object):
             headers=headers)
         if not response.status == 200:
             raise Error(content)
-        response_args = Client2._split_url_string(content)
+        response_args = json.loads(content)
 
         error = response_args.pop('error', None)
         if error is not None:
             raise Error(error)
 
-        refresh_token = response_args.pop('refresh_token', None)
-        if refresh_token is not None:
-            response_args = self.refresh(refresh_token, secret_type=secret_type)
         return response_args
 
     def refresh(self, refresh_token, params=None, secret_type=None,
